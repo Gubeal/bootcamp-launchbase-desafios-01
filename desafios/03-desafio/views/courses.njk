@@ -11,50 +11,22 @@
   </div>
 
   <section class="cards">
-    <div class="card" id="substituindo-a-instrucao-switch-por-object-literal">
+    {% for course in courses %}
+    <div class="card" id="{{ course.id }}">
       <div class="card__image-container">
-        <img src="https://blog.rocketseat.com.br/content/images/2020/09/substituindo-a-instrucao-switch-por-object-literal-rocketseat-1.png" alt="Vídeo Aula">
+        <img src="{{ course.image }}" alt="Vídeo Aula">
       </div>
       <div class="card__content">
-        <p>Substituindo a instrução switch por Object Literal</p>
+        <p>{{ course.title }} </p>
         <br>
-        <p>Author: Thiago Marinho</p>
+        <p>{{ course.role }}</p>
       </div>
       <div class="card__info">
         <p>Leitura:</p>
-        <p>2 min</p>
+        <p>{{ course.duration }}</p>
       </div>
     </div>
-
-    <div class="card" id="es11-novas-features-do-javascript">
-      <div class="card__image-container">
-        <img src="https://blog.rocketseat.com.br/content/images/2020/09/es11-novas-features-do-javascript.png" alt="Vídeo Aula">
-      </div>
-      <div class="card__content">
-        <p>ES11 - Novas features do JavaScript</p>
-        <br>
-        <p>Author: Thiago Marinho</p>
-      </div>
-      <div class="card__info">
-        <p>Leitura:</p>
-        <p>8 min</p>
-      </div>
-    </div>
-
-    <div class="card" id="o-que-e-readme-e-porque-e-tao-importante">
-      <div class="card__image-container">
-        <img src="https://blog.rocketseat.com.br/content/images/2020/07/o-que-e-readme.png" alt="Vídeo Aula">
-      </div>
-      <div class="card__content">
-        <p>O que é README e porque é tão importante</p>
-        <br>
-        <p>Author: Thiago Marinho</p>
-      </div>
-      <div class="card__info">
-        <p>Leitura:</p>
-        <p>4 min</p>
-      </div>
-    </div>
+    {% endfor %}
 
   </section>
 

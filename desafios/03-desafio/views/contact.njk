@@ -9,10 +9,9 @@
 {% block content %}
   <header>
     <div>
-      <a href="https://discordapp.com/invite/gCRAFhc">Comunidade</a>
-      <a href="mailto:oi@rocketseat.com.br">Email</a>
-      <a href="tel:+5547992078767">Telefone</a>
-      <a href="02-2-pagina-descricao.html">Sobre</a>
+      {% for contact in contacts %}
+      <a href="{{ contact.url }}">{{ contact.name }}</a>
+      {% endfor %}
     </div>
   </header>
 {% endblock %}
