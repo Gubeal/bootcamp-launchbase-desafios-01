@@ -32,7 +32,13 @@ server.get("/", function(request, response) {
 
 server.get("/portfolio", function (request, response) {
   return response.render("portfolio", { items: videos });
-})
+});
+
+server.get("/video", function(req, res) {
+  const id = req.query.id;
+
+  res.send(id);
+});
 
 server.listen(5000, function() {
   console.log("server is runing");
