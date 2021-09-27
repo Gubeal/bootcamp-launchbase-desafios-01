@@ -45,9 +45,14 @@ server.get("/contact", function(req, res){
   return res.render("contact", { contacts });
 });
 
-server.get("/courses", function(req, res){
+server.get("/courses/:id?", function(req, res) {
+  const id = req.params.id;
+  if ( id ) {
+    console.log(id)
+    return res.render("course-detail", { slugId: id });
+  }
   return res.render("courses", { courses });
-})
+}) 
 
 server.use(function(req, res) {
   res.status(404).render("not-found");

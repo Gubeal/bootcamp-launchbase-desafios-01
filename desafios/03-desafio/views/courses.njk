@@ -30,17 +30,6 @@
 
   </section>
 
-  <div class="modal-overlay">
-    <div class="modal">
-      <a class="close-modal">
-        <i class="material-icons">close</i>
-      </a>
-      <div class="modal-content">
-        <iframe src="" frameborder="0"></iframe>
-      </div>
-    </div>
-  </div>
-
   <script>
     const modalOverlay = document.querySelector('.modal-overlay');
     const cards = document.querySelectorAll('.card');
@@ -48,14 +37,8 @@
     for (let card of cards) {
       card.addEventListener("click", function(){
         const slugId = card.getAttribute('id');
-        modalOverlay.classList.add('active');
-        modalOverlay.querySelector("iframe").src = `https://blog.rocketseat.com.br/${slugId}`
+        window.location.href = `/courses/${slugId}`
       })
     }
-
-    document.querySelector(".close-modal").addEventListener("click", function() {
-      modalOverlay.classList.remove('active');
-      modalOverlay.querySelector("iframe").src = "";
-    })
   </script>
 {% endblock %}
